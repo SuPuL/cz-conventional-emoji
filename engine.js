@@ -14,7 +14,9 @@ var filter = function(array) {
 
 var headerLength = function(answers) {
   return (
-    answers.type.name.length + 2 + (answers.scope ? answers.scope.length + 2 : 0)
+    answers.type.name.length +
+    2 +
+    (answers.scope ? answers.scope.length + 2 : 0)
   );
 };
 
@@ -43,10 +45,10 @@ module.exports = function(options) {
   var length = longest(Object.keys(types)).length + 1;
   var choices = map(types, function(type, key) {
     return {
-      name: rightPad(type.emoji + '  ' + key + ':', length) + ' ' + type.description,
+      name: rightPad(key + ':', length) + type.emoji + ' ' + type.description,
       value: {
         emoji: type.emoji,
-        name: key,
+        name: type.name
       }
     };
   });
@@ -204,8 +206,8 @@ module.exports = function(options) {
         var scope = answers.scope ? '(' + answers.scope + ')' : '';
 
         // Hard limit this line in the validate
-        var emoji = answers.type.emoji ? answers.type.emoji + ' ' : ''; 
-        var head =  answers.type.name + scope + ': ' + emoji  + answers.subject;
+        var emoji = answers.type.emoji ? answers.type.emoji + ' ' : '';
+        var head = answers.type.name + scope + ': ' + emoji + answers.subject;
 
         // Wrap these lines at options.maxLineWidth characters
         var body = answers.body ? wrap(answers.body, wrapOptions) : false;
