@@ -204,7 +204,8 @@ module.exports = function(options) {
         var scope = answers.scope ? '(' + answers.scope + ')' : '';
 
         // Hard limit this line in the validate
-        var head = answers.type.emoji + ' '+ answers.type.name + scope + ': ' + answers.subject;
+        var emoji = answers.type.emoji ? answers.type.emoji + ' ' : ''; 
+        var head =  answers.type.name + scope + ': ' + emoji  + answers.subject;
 
         // Wrap these lines at options.maxLineWidth characters
         var body = answers.body ? wrap(answers.body, wrapOptions) : false;

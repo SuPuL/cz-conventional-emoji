@@ -1,4 +1,4 @@
-# cz-conventional-emoji
+# @supul/cz-conventional-emoji
 
 一个遵循 conventional-changelog 的带有 emoji 的 commitizen 适配器。
 
@@ -10,13 +10,13 @@
 
 ```
  Select the type of change that you're committing: (Use arrow keys)
-❯ ✨  Feat:              Introducing new features.
-  🐛  Bug:               Fixing a bug.
-  📝  Docs:              Writing docs.
-  🎨  Style:             Improving structure / format of the code.
-  💄  UI:                Updating the UI and style files.
-  🚑  Quickfix:          Critical hotfix.
-  ⚡️  Pref:              Improving performance.
+❯ Feat:              ✨ Introducing new features.
+  Bug:               🐛  Fixing a bug.
+  Docs:              📝 Writing docs.
+  Style:             🎨 Improving structure / format of the code.
+  UI:                💄 Updating the UI and style files.
+  Quickfix:          🚑 Critical hotfix.
+  Pref:              ⚡️  Improving performance.
 (Move up and down to reveal more choices)
 ```
 
@@ -27,25 +27,25 @@
 ### 全局
 
 ```
-yarn global add cz-conventional-emoji
+yarn global add @supul/cz-conventional-emoji
 # OR
-# npm install --global cz-conventional-emoji
+# npm install --global @supul/cz-conventional-emoji
 
 # 设置全局默认适配器
-echo '{ "path": "cz-conventional-emoji" }' > ~/.czrc
+echo '{ "path": "@supul/cz-conventional-emoji" }' > ~/.czrc
 ```
 
 ### 本地
 
 ```
-yarn add cz-conventional-emoji
+yarn add @supul/cz-conventional-emoji
 # OR
-# npm install --save-dev cz-conventional-emoji
+# npm install --save-dev @supul/cz-conventional-emoji
 
 # 为你的项目设置默认适配器
 "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-emoji"
+      "path": "./node_modules/@supul/cz-conventional-emoji"
     },
   }
 ```
